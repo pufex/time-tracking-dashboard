@@ -168,7 +168,7 @@ body{
     content: ' ';
     height: 50px;
     width: 50px;
-    background-image: url(images/icon-work.svg);
+    background-image: url(icon-work.svg);
     background-repeat: no-repeat;
     background-size: contain;
     background-color: transparent;
@@ -186,7 +186,7 @@ body{
     content: ' ';
     height: 50px;
     width: 50px;
-    background-image: url('images/icon-play.svg');
+    background-image: url('icon-play.svg');
     background-repeat: no-repeat;
     background-size: contain;
     background-color: transparent;
@@ -204,7 +204,7 @@ body{
     content: ' ';
     height: 50px;
     width: 50px;
-    background-image: url(images/icon-study.svg);
+    background-image: url(icon-study.svg);
     background-repeat: no-repeat;
     background-size: contain;
     background-color: transparent;
@@ -222,7 +222,7 @@ body{
     content: ' ';
     height: 50px;
     width: 50px;
-    background-image: url(images/icon-exercise.svg);
+    background-image: url(icon-exercise.svg);
     background-repeat: no-repeat;
     background-size: contain;
     background-color: transparent;
@@ -240,7 +240,7 @@ body{
     content: ' ';
     height: 50px;
     width: 50px;
-    background-image: url(images/icon-social.svg);
+    background-image: url(icon-social.svg);
     background-repeat: no-repeat;
     background-size: contain;
     background-color: transparent;
@@ -258,7 +258,7 @@ body{
     content: ' ';
     height: 50px;
     width: 50px;
-    background-image: url(images/icon-care.svg);
+    background-image: url(icon-care.svg);
     background-repeat: no-repeat;
     background-size: contain;
     background-color: transparent;
