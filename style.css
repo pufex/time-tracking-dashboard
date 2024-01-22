@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+:root{
+    --Blue: hsl(246, 80%, 60%);
+/* work */
+    --Light-orange: hsl(15, 100%, 70%);
+/* play */
+    --Soft-blue: hsl(195, 74%, 62%);
+/* study */
+    --Light: hsl(348, 100%, 68%);
+/* exercise */
+    --Lime-green: hsl(145, 58%, 55%);
+ /* social */
+    --Violet: hsl(264, 64%, 52%);
+/* self-care */
+    --Soft-yellow: hsl(43, 84%, 65%);
+
+    --Very-dark-blue: hsl(226, 43%, 10%);
+    --Dark-blue: hsl(235, 46%, 20%);
+    --Desaturated-blue: hsl(235, 45%, 61%);
+    --Pale-Blue: hsl(236, 100%, 87%);
+    --White: hsl(0, 0%, 100%);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--Very-dark-blue);
+    min-height: 100vh;
+    width: 100%;
+}
+
+.container{
+    display: flex;
+    position: relative;
+    width: 800px;
+}
+
+.side-panel{
+    /* height: 400px; */
+    width: 200px;
+    border-radius: 15px;
+    background-color: var(--Dark-blue);
+    overflow: hidden;
+}
+
+.user-panel{
+    min-height: 350px;
+    padding: 1.5em;
+    background-color: var(--Desaturated-blue);
+    border-radius: 15px;
+}
+
+.user-panel img{
+    height: 50px;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 3px solid var(--White);
+    margin-bottom: 1em;
+}
+
+.user-panel h3{
+    font-size: 0.75rem;
+    color: var(--Pale-Blue);
+    margin-bottom: 1em;
+}
+
+.user-panel h1{
+    font-weight: 300;
+    color: var(--White);
+    text-wrap: wrap;
+}
+
+.settings{
+    all: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 1.5em;
+    list-style-type: none;
+    height: 150px;
+}
+
+.settings li{
+    all: none;
+    color: var(--White);
+}
+
+.settings li:hover{
+    color: var(--Pale-Blue);
+}
+
+.activities{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.activity-container{
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    height: 200px;
+    width: 220px;
+    padding-top: 3em;
+    z-index: -2;
+}
+
+.activity{
+    position: relative;
+    border-radius: 0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    height: 100%;
+    width: 100%;
+    background-color: var(--Dark-blue);
+    padding: 1em;
+    font-weight: 300;
+    color: var(--White);
+}
+
+.activity h1{
+    font-size: 2.5rem;
+    font-weight: inherit;
+    margin-bottom: 0.5em;
+}
+
+.activity p{
+    font-size: 0.75rem;
+    font-weight: inherit;
+    color: var(--Pale-Blue);
+}
+
+.icons{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+}
+
+.icons h3{
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+.icons button{
+    display: block;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    text-align: center;
+}
+
+.work{
+    background-color: var(--Light-orange);
+}
+
+.work::before{
+    position: absolute;
+    content: ' ';
+    height: 50px;
+    width: 50px;
+    background-image: url(images/icon-work.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    top: -2px;
+    right: -1px;
+    z-index: -1;
+}
+
+.play{
+    background-color: var(--Soft-blue);
+}
+
+.play::before{
+    position: absolute;
+    content: ' ';
+    height: 50px;
+    width: 50px;
+    background-image: url('images/icon-play.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    top: -2px;
+    right: -1px;
+    z-index: -1;
+}
+
+.study{
+    background-color: var(--Light);
+}
+
+.study::before{
+    position: absolute;
+    content: ' ';
+    height: 50px;
+    width: 50px;
+    background-image: url(images/icon-study.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    top: -2px;
+    right: -1px;
+    z-index: -1;
+}
+
+.exercise{
+    background-color: var(--Lime-green);
+}
+
+.exercise::before{
+    position: absolute;
+    content: ' ';
+    height: 50px;
+    width: 50px;
+    background-image: url(images/icon-exercise.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    top: -2px;
+    right: -1px;
+    z-index: -1;
+}
+
+.social{
+    background-color: var(--Violet);
+}
+
+.social::before{
+    position: absolute;
+    content: ' ';
+    height: 50px;
+    width: 50px;
+    background-image: url(images/icon-social.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    top: -2px;
+    right: -1px;
+    z-index: -1;
+}
+
+.care{
+    background-color: var(--Soft-yellow);
+}
+
+.care::before{
+    position: absolute;
+    content: ' ';
+    height: 50px;
+    width: 50px;
+    background-image: url(images/icon-care.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    top: -2px;
+    right: -1px;
+    z-index: -1;
+}
+
+
+/* .activity-work{
+    background-color: var(--Sof-orange);
+}
+
+.activity-work::before{
+    position: absolute;
+    content: ' ';
+    height: 50px;
+    width: 50px;
+    background-image: url(images/icon-work.svg);
+    background-color: transparent;
+    top: -2px;
+    right: -1px;
+}
+.activity-work{
+    background-color: var(--Sof-orange);
+}
+
+.activity-work::before{
+    position: absolute;
+    content: ' ';
+    height: 50px;
+    width: 50px;
+    background-image: url(images/icon-work.svg);
+    background-color: transparent;
+    top: -5px;
+    right: 10px;
+}
+.activity-work{
+    background-color: var(--Sof-orange);
+}
+
+.activity-work::before{
+    position: absolute;
+    content: ' ';
+    height: 50px;
+    width: 50px;
+    background-image: url(images/icon-work.svg);
+    background-color: transparent;
+    top: -5px;
+    right: 10px;
+}
+.activity-work{
+    background-color: var(--Sof-orange);
+}
+
+.activity-work::before{
+    position: absolute;
+    content: ' ';
+    height: 50px;
+    width: 50px;
+    background-image: url(images/icon-work.svg);
+    background-color: transparent;
+    top: -5px;
+    right: 10px;
+}
+.activity-work{
+    background-color: var(--Sof-orange);
+}
+
+.activity-work::before{
+    position: absolute;
+    content: ' ';
+    height: 50px;
+    width: 50px;
+    background-image: url(images/icon-work.svg);
+    background-color: transparent;
+    top: -5px;
+    right: 10px;
+} */
