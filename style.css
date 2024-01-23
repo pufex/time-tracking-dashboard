@@ -17,6 +17,7 @@
 
     --Very-dark-blue: hsl(226, 43%, 10%);
     --Dark-blue: hsl(235, 46%, 20%);
+    --Lighter-blue: hsl(237, 44%, 32%);
     --Desaturated-blue: hsl(235, 45%, 61%);
     --Pale-Blue: hsl(236, 100%, 87%);
     --White: hsl(0, 0%, 100%);
@@ -41,19 +42,22 @@ body{
 .container{
     display: flex;
     position: relative;
-    width: 800px;
+    width: auto;
+    min-height: 500px;
 }
 
 .side-panel{
     /* height: 400px; */
-    width: 200px;
+    min-width: 200px;
+    height: 100%;
     border-radius: 15px;
     background-color: var(--Dark-blue);
     overflow: hidden;
+    margin-right: 20px;
 }
 
 .user-panel{
-    min-height: 350px;
+    min-height: 300px;
     padding: 1.5em;
     background-color: var(--Desaturated-blue);
     border-radius: 15px;
@@ -86,32 +90,44 @@ body{
     justify-content: space-evenly;
     padding: 1.5em;
     list-style-type: none;
-    height: 150px;
+    height: 100vh;
+    max-height: 200px;
 }
 
-.settings li{
+.settings *{
     all: none;
     color: var(--White);
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
 }
 
-.settings li:hover{
+.settings *:hover{
     color: var(--Pale-Blue);
+}
+
+.settings *:focus{
+    color: var(--Desaturated-blue);
 }
 
 .activities{
     position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    height: 100%;
 }
 
 .activity-container{
     position: relative;
     overflow: hidden;
     border-radius: 15px;
-    height: 200px;
-    width: 220px;
+    height: 240px;
+    width: 100vw;
+    max-width: 260px;
     padding-top: 3em;
-    z-index: -2;
+    /* z-index: -2; */
 }
 
 .activity{
@@ -125,6 +141,10 @@ body{
     padding: 1em;
     font-weight: 300;
     color: var(--White);
+    cursor: pointer;
+}
+.activity:hover{
+    background-color: var(--Lighter-blue);
 }
 
 .activity h1{
@@ -157,13 +177,14 @@ body{
     border: none;
     outline: none;
     text-align: center;
+    color: white;
 }
 
 .work{
     background-color: var(--Light-orange);
 }
 
-.work::before{
+.work::before, .play::before, .study::before, .exercise::before, .social::before, .care::before{
     position: absolute;
     content: ' ';
     height: 50px;
@@ -174,7 +195,7 @@ body{
     background-color: transparent;
     top: -2px;
     right: -1px;
-    z-index: -1;
+    z-index: 1;
 }
 
 .play{
@@ -182,17 +203,7 @@ body{
 }
 
 .play::before{
-    position: absolute;
-    content: ' ';
-    height: 50px;
-    width: 50px;
     background-image: url('icon-play.svg');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-color: transparent;
-    top: -2px;
-    right: -1px;
-    z-index: -1;
 }
 
 .study{
@@ -200,17 +211,7 @@ body{
 }
 
 .study::before{
-    position: absolute;
-    content: ' ';
-    height: 50px;
-    width: 50px;
     background-image: url(icon-study.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-color: transparent;
-    top: -2px;
-    right: -1px;
-    z-index: -1;
 }
 
 .exercise{
@@ -218,17 +219,7 @@ body{
 }
 
 .exercise::before{
-    position: absolute;
-    content: ' ';
-    height: 50px;
-    width: 50px;
     background-image: url(icon-exercise.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-color: transparent;
-    top: -2px;
-    right: -1px;
-    z-index: -1;
 }
 
 .social{
@@ -236,17 +227,7 @@ body{
 }
 
 .social::before{
-    position: absolute;
-    content: ' ';
-    height: 50px;
-    width: 50px;
     background-image: url(icon-social.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-color: transparent;
-    top: -2px;
-    right: -1px;
-    z-index: -1;
 }
 
 .care{
@@ -254,87 +235,72 @@ body{
 }
 
 .care::before{
-    position: absolute;
-    content: ' ';
-    height: 50px;
-    width: 50px;
-    background-image: url(icon-care.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-color: transparent;
-    top: -2px;
-    right: -1px;
-    z-index: -1;
+    background-image: url(icon-self-care.svg);
 }
 
+@media (max-width: 1050px){
+    body{
+        align-items: start;
+        padding: 20px;
+        /* padding-top: 50px; */
+    }
 
-/* .activity-work{
-    background-color: var(--Sof-orange);
-}
+    .container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 750px;
+    }
 
-.activity-work::before{
-    position: absolute;
-    content: ' ';
-    height: 50px;
-    width: 50px;
-    background-image: url(images/icon-work.svg);
-    background-color: transparent;
-    top: -2px;
-    right: -1px;
-}
-.activity-work{
-    background-color: var(--Sof-orange);
-}
+    
+    .side-panel{
+        margin-right: 0;
+        margin-bottom: 20px;
+        width: 100%;
+    }
 
-.activity-work::before{
-    position: absolute;
-    content: ' ';
-    height: 50px;
-    width: 50px;
-    background-image: url(images/icon-work.svg);
-    background-color: transparent;
-    top: -5px;
-    right: 10px;
-}
-.activity-work{
-    background-color: var(--Sof-orange);
-}
+    .user-panel{
+        min-height: 200px
+    }
 
-.activity-work::before{
-    position: absolute;
-    content: ' ';
-    height: 50px;
-    width: 50px;
-    background-image: url(images/icon-work.svg);
-    background-color: transparent;
-    top: -5px;
-    right: 10px;
-}
-.activity-work{
-    background-color: var(--Sof-orange);
+    .settings{
+        flex-direction: row;
+        height: auto;
+        justify-content: space-evenly;
+    }
+
+    .activities{
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+    }
+
+    .activity-container{
+        width: auto;
+        max-width: none;
+    }
 }
 
-.activity-work::before{
-    position: absolute;
-    content: ' ';
-    height: 50px;
-    width: 50px;
-    background-image: url(images/icon-work.svg);
-    background-color: transparent;
-    top: -5px;
-    right: 10px;
-}
-.activity-work{
-    background-color: var(--Sof-orange);
-}
+@media (max-width: 650px){
+    .container{
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        width: 100%;
+        max-width: 375px;
+    }
 
-.activity-work::before{
-    position: absolute;
-    content: ' ';
-    height: 50px;
-    width: 50px;
-    background-image: url(images/icon-work.svg);
-    background-color: transparent;
-    top: -5px;
-    right: 10px;
-} */
+    .side-panel{
+        max-width: 375px;
+    }
+
+    .activities{
+        grid-template-columns: 1fr;
+    }
+    .activity-container{
+        width: 100%;
+        max-width: 375px;
+        height: 200px;
+    }
+} 
+
+
